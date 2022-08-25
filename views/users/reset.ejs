@@ -1,7 +1,10 @@
-<% include ./partials/header %>
-    <div class="row">
+<% layout('layouts/boilerplate')%>
+
+
+<div class="row">
         <div class="col-md-12">
-            <form action="/reset/<%= token %>" method="POST">
+            <%=token%>
+            <form action="/reset/<%=token%>" method="POST">
                 <legend>Reset Password</legend>
                 <div class="form-group">
                     <label for="password">New Password</label>
@@ -18,5 +21,4 @@
                 </div>
             </form>
         </div>
-    </div>
-    <% include ./partials/footer %>
+    </div>   

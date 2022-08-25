@@ -52,12 +52,16 @@ router.route('/join/:id')
     .get(users.renderMember)
     .post(users.createMembership)
 
-// router.route('/forgot')
-//     .get(users.renderForgot)
-//     .post(users.forgot)
+router.route('/forgot')
+    .get(users.renderForgot)
+    .post(users.forgot)
 
-// router.route('/reset/:token')
-//     .get(users.getToken)
-//     .post(users.postToken)
+router.route('/reset/:token')
+    .get(users.getToken)
+    .post(users.postToken)
+
+    
+router.route('/users/reset')
+.get(users.renderReset)
 
 module.exports = router;

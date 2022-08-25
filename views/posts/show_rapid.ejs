@@ -182,8 +182,10 @@
                                             <label class="form-label" for="section">Seccion:</label>
                                             <select id="section" name="section" class="form-control">
                                                 <option value="N/A">N/A</option>
-                                                <% for (let section of campground.sections){%>
-                                                    <option value="<%=section%>">
+                                                <% for (let section of campground.sections){
+                                                    let selected = ( product.section == section ) ? "selected" : "";
+                                                    %>
+                                                    <option value="<%=section%>" <%=selected%>>
                                                         <%=section%>
                                                     </option>
                                                     <%}%>
@@ -207,8 +209,10 @@
                                                     <label class="form-label" for="drop_off">Drop Off:</label>
                                                     <select id="drop_off" name="drop_off" class="form-control">
                                                         <option value=" N/A">N/A</option>
-                                                        <% for (let drop_off of campground.drop_offs){%>
-                                                            <option value="<%=drop_off%>">
+                                                        <% for (let drop_off of campground.drop_offs){
+                                                            let selected = ( product.drop_off == drop_off ) ? "selected" : "";
+                                                            %>
+                                                            <option value="<%=drop_off%>"  <%=selected%>>
                                                                 <%=drop_off%>
                                                             </option>
                                                             <%}%>
@@ -218,6 +222,7 @@
                                                     <div class="col-12 col-md-4 mb-2">
                                                         <label class="form-label" for="seat">Seat:</label>
                                                         <input type="text" name="seat" id="seat" class="form-control"
+                                                        value="<%= product.seat %>"
                                                             placeholder="23D">
                                                     </div>
                                                     <div class="col-12">
@@ -226,8 +231,10 @@
                                                                 <label class="form-label"
                                                                     for="how_many">Quantity:</label>
                                                                 <input type="number" name="how_many" id="how_many"
+                                                                    value="<%= product.how_many %>"
                                                                     placeholder="Cantidad" class="form-control"
-                                                                    required>
+                                                                    required
+                                                                    >
                                                             </div>
                                                             <div class="col-8 mb-2 mt-2">
                                                                 <button class="btn btn-primary btn-block">Payment
